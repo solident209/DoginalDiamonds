@@ -1,0 +1,3685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doginal Diamonds</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #cb9800, #000);
+        }
+        .hero {
+            background-image: url('https://cdn.doggy.market/content/c70893904cee0483cd33e42c0070cfeaeb59d134c2adc31236dfe293508e2650i0');
+            background-size: cover;
+            background-position: center;
+        }
+        .diamond-glow {
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.diamond-glow:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+  .sticky {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+</style>
+
+    </style>
+</head>
+<body class="text-white font-sans">
+    <!-- Hero Section -->
+    <section class="hero h-screen flex flex-col items-center justify-center text-center p-6">
+        <h1 class="text-5xl font-extrabold" style="text-shadow: 2px 2px 8px rgba(0, 0, 0, 1);">
+            Doginal Diamonds
+        </h1>
+        <p class="text-xl font-extrabold mt-4" style="text-shadow: 2px 2px 8px rgba(0, 0, 0, 1);">
+            A Unique Sparkle on the Dogecoin Blockchain!
+        </p>        
+        <button onclick="document.getElementById('collection').scrollIntoView({ behavior: 'smooth' });" class="mt-6 px-6 py-3 bg-yellow-500 rounded-full hover:bg-yellow-600">Explore the Collection</button>
+    </section>
+
+    <!-- About Section -->
+    <section class="bg-black py-16">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-4">About Doginal Diamonds</h2>
+            <p class="text-lg max-w-3xl mx-auto">Discover rare, unique Dogecoin Ordinals that combine the power of Dogecoin with the resistance of diamonds. Each piece is minted as an ordinal on the Dogecoin blockchain, ensuring rarity, authenticity, and longevity.</p>
+            <p class="text-lg max-w-3x1 mx-auto">For the True Diamond Hands.</p>
+        </div>
+    </section>
+
+    <!-- Collection Preview -->
+    <section id="collection" class="py-16">
+        <div class="flex">
+            
+            <!-- Sidebar -->
+            <aside class="w-1/4 p-4 bg-black text-black">
+                <div class="mb-4">
+                    <div class="mb-6">
+                        <label for="search-bar" class="font-bold">Search NFTs:</label>
+                        <input
+                            type="text"
+                            id="search-bar"
+                            class="w-full px-4 py-2 rounded border"
+                            placeholder="Search by name or attributes..."
+                        />
+                    </div>                    
+                    <label class="font-bold">Background:</label>
+                    <select id="Background-filter" class="w-full px-4 py-2 rounded border bg-black text-white">
+                <option value="all">All</option>
+                <option value="Orange">Orange</option>
+                <option value="Yellow">Yellow</option>
+                <option value="Gray">Gray</option>
+                <option value="Green">Green</option>
+                <option value="Light Gray">Light Gray</option>
+            </select>
+        </div>
+        <div class="mb-4">
+            <label class="font-bold">Pattern:</label>
+            <select id="Pattern-filter" class="w-full px-4 py-2 rounded border bg-black text-white">
+                <option value="all">All</option>
+                <option value="D">D</option>
+                <option value="D with Diamonds">D with Diamonds</option>
+                <option value="Basic">Basic</option>
+                <option value="Diamonds">Diamonds</option>
+            </select>
+        </div>
+        <div class="mb-4">
+            <label class="font-bold">Body:</label>
+            <select id="Body-filter" class="w-full px-4 py-2 rounded border bg-black text-white">
+                <option value="all">All</option>
+                <option value="Orange">Orange</option>
+                <option value="Yellow">Yellow</option>
+                <option value="Gray">Gray</option>
+                <option value="Green">Green</option>
+                <option value="Gray">Gray</option>
+                <option value="CamoBGY">CamoBGY</option>
+                <option value="CamoBYG">CamoBYG</option>
+                <option value="CamoBRG">CamoBRG</option>
+                <option value="CamoBGR">CamoBGR</option>
+                <option value="Camo">Camo</option>
+                <option value="Violet">Violet</option>
+                <option value="Indigo">Indigo</option>
+                <option value="Blue">Blue</option>
+                <option value="Red">Red</option>
+                <option value="Solid">Solid</option>
+                <option value="GOD">GOD</option>
+                <option value="OG">OG</option>
+            </select>
+        </div>
+        <div class="mb-4">
+            <label class="font-bold">Sauce:</label>
+            <select id="Sauce-filter" class="w-full px-4 py-2 rounded border bg-black text-white">
+                <option value="all">All</option>
+                <option value="Orange">Orange</option>
+                <option value="Yellow">Yellow</option>
+                <option value="Gray">Gray</option>
+                <option value="Green">Green</option>
+                <option value="Violet">Violet</option>
+                <option value="Indigo">Indigo</option>
+                <option value="Blue">Blue</option>
+                <option value="Red">Red</option>
+                <option value="Solid">Solid</option>
+                <option value="GOD">GOD</option>
+            </select>
+        </div>
+        <div class="mb-4">
+            <label class="font-bold">Shine:</label>
+            <select id="Shine-filter" class="w-full px-4 py-2 rounded border bg-black text-white">
+                <option value="all">All</option>
+            </select>
+        </div>
+        <div class="mb-4">
+            <label class="font-bold">Outline:</label>
+            <select id="Outline-filter" class="w-full px-4 py-2 rounded border bg-black text-white">
+                <option value="all">All</option>
+                <option value="Orange">Orange</option>
+                <option value="Yellow">Yellow</option>
+                <option value="Gray">Gray</option>
+                <option value="Green">Green</option>
+                <option value="Violet">Violet</option>
+                <option value="Indigo">Indigo</option>
+                <option value="Blue">Blue</option>
+                <option value="Red">Red</option>
+                <option value="Solid">Solid</option>
+                <option value="White">White</option>
+                <option value="Black">Black</option>
+            </select>
+        </div>
+        <div class="flex justify-between items-center my-4">
+            <button id="reset-filters" class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">
+              Reset Filters
+            </button>
+          </div>
+          
+    </aside>
+    <!-- Main Content -->
+    <div class="w-3/4 p-4">
+        <div id="nft-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+        <div id="pagination" class="flex justify-center items-center space-x-4 py-4">
+            <button id="prev-page" class="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded" disabled>
+              Previous
+            </button>
+            <span id="page-info" class="text-lg">Page 1 of 1</span>
+            <button id="next-page" class="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded">
+              Next
+            </button>
+          </div>
+          <p id="no-results" class="text-center text-gray-500 hidden">No results found.</p>
+    </div>
+</div>   
+    </section>
+     <!-- JavaScript added at the end of the body -->
+     <script>
+
+        // Array of NFTs
+        const nftCollection = [
+    {
+        "image": "https://cdn.doggy.market/content/f718e81ea8c53f1755030de3aba081adbabd09378be5666e6f7788bd13b879c0i0",
+        "name": "Doginal Diamonds #1",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "D with Diamonds"
+            },
+            {
+                "trait_type": "Body",
+                "value": "OG"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Solid"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/f9eb7b94d33fe314bc2a5159455b3927df51663c5ef1c9242c2f0c6ae243a9d2i0",
+        "name": "Doginal Diamonds #2",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Solid"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Yellow"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/caa074c939509a3bb32de53ee3d5796cfa1856cd84e16d6654bda4a8a4996b79i0",
+        "name": "Doginal Diamonds #3",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Yellow"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Orange"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Indigo"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Violet"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/da4e8c179e2225d35b2e6e39c699462fdec9511160aba52cb8f4b5f80b5b675ei0",
+        "name": "Doginal Diamonds #4",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Light Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Yellow"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Green"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/32fb9a6a69a636aef28ab804dceb670f55eef103357fccb21d4e151de66766a6i0",
+        "name": "Doginal Diamonds #5",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Orange"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Red"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/ddf3e34e89cfe1771bbdeb260a20a38ccaedd104bb95ead950a3c76151347ea9i0",
+        "name": "Doginal Diamonds #6",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Light Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Red"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Green"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Gray"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/deb22063cfcd5431f6d7e662e61fd584bc7ac51b65948bebb28bee61122c8a1di0",
+        "name": "Doginal Diamonds #7",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Light Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Diamonds"
+            },
+            {
+                "trait_type": "Body",
+                "value": "CamoBGY"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/b58bd7d19c6ac62ce3a737d93b831f8102f1612ea1c457b0b67d6158d8c1da61i0",
+        "name": "Doginal Diamonds #8",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "D with Diamonds"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Yellow"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Orange"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/dd7e8798afdd389bc6c462b7cdef431628a1096e8cc14b1e057b7fbcf19789e6i0",
+        "name": "Doginal Diamonds #9",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "CamoBRG"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Blue"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/83a743ec2b9de0f2b1871e28b74d13ac92ba12b43dd2bdfa4a018fbcafb1afe6i0",
+        "name": "Doginal Diamonds #10",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Orange"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Green"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/bdae842fb7283973dc16505af1971db6a0e12dab1bb87e35461af7903190296ai0",
+        "name": "Doginal Diamonds #11",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Yellow"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "D"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Blue"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Blue"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/cda21404bea15e5491045c9c77a18fc4bf77cd674b03c08b96a5ffcc1e91b12ei0",
+        "name": "Doginal Diamonds #12",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Light Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Violet"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Blue"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/b8a61bef0446f8844338fb548c1eae883681f9bdee621a42cfc49d11404994f7i0",
+        "name": "Doginal Diamonds #13",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Green"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "D"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Orange"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Indigo"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "White "
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/03ded07c696b994ecf87dff9a38da7263e8a619b471688c93592363c96cf0913i0",
+        "name": "Doginal Diamonds #14",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Light Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Green"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/fc541a7b2d8313cab1ef6990d97843976f74ced7f028f7ae766408d501d904f4i0",
+        "name": "Doginal Diamonds #15",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Light Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Diamonds"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Orange"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "White "
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/e233c8f8a745beaa33c05cc6b9a527883908e7b2fa1823fcd5a817a1aee8ff1ai0",
+        "name": "Doginal Diamonds #16",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Orange"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Blue"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Green"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "White "
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/637656109277c1dede382d4dca91e3b3fc7a9762e8c53ddaf0ed39edfd1e551bi0",
+        "name": "Doginal Diamonds #17",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Indigo"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Blue"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Orange"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/7dbcb555cfc5a2150832af94233cf386255e7936cba0a7a00b9c86e0dc87a13di0",
+        "name": "Doginal Diamonds #18",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Green"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Yellow"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Yellow"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/9fcd1645741091a152bb8712967c7678cfb6c9deb62aa1955653476bb5dc5e84i0",
+        "name": "Doginal Diamonds #19",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Orange"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Blue"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Orange"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "White "
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/80a20285286a2d01ddce74226cf03f1b9804b58b72ec1d38d432302c6df1ae7ci0",
+        "name": "Doginal Diamonds #20",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Light Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "CamoBYG"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Blue"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/0e68272f578ac8af73f4fefa68d646a2191eecb8203d7c10269ffe226f513f43i0",
+        "name": "Doginal Diamonds #21",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Green"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "D"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Indigo"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Yellow"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/cc0326ab9ff811eb9a28d466ab8467885b8f8ae53cd7cd7fa2db8f5b04c1e30di0",
+        "name": "Doginal Diamonds #22",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Light Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Indigo"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Red"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/aead96aa2ecfb1e05771a587cadb85590751cf0abb7aa98f2208ec78eb6d2131i0",
+        "name": "Doginal Diamonds #23",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Light Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Diamonds"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Indigo"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Blue"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/699b01074702f3e5f3bd7a1db1fcfbd6d340a4f90c0b5b43b038081f628cac47i0",
+        "name": "Doginal Diamonds #24",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Light Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Blue"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Orange"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "White "
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/654b67b642ed1d0a4b9320ade31202834a88cd6cec879f479ccbfa1e4c4155c4i0",
+        "name": "Doginal Diamonds #25",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Light Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Yellow"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Indigo"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/e57d6d51b04b162cbdd80d2164591b479680f00fb4d1387c85eb87b61802b5dbi0",
+        "name": "Doginal Diamonds #26",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Green"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Violet"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/0cae3a430393fa646481d686bba2648e3dbc79bec8f264a0ad45e9733da5f8efi0",
+        "name": "Doginal Diamonds #27",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Blue"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Orange"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Green"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/3e1f335adeb2194c381c8c514998106daa04a6d679c298b2fa42870cdaa40e7di0",
+        "name": "Doginal Diamonds #28",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Indigo"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Yellow"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "White "
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/ce13fc9e077cda0997a9a4ed9fc06b2913c7230c23847c1d251a8dfd2f4b55bci0",
+        "name": "Doginal Diamonds #29",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Light Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Red"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Blue"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/a2a94ccc3231bc38fa72a020d2d637cdc3470b30b48ba5f677be56eb099feedfi0",
+        "name": "Doginal Diamonds #30",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Violet"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "White "
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/bfd249360568fbe25eaca45a61d2f2cd6cb9f1e56b25d331af9690eba75613cci0",
+        "name": "Doginal Diamonds #31",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Light Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "CamoBRG"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Yellow"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/d42d4c81eaaf51d3f1eace814a86701172f45bf0b94bcf05819742cf0a86e9b5i0",
+        "name": "Doginal Diamonds #32",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Green"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Red"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Orange"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/84889697a80974baf24fd332692babd8990765eddf0eefa20ee27d8a2aea90d2i0",
+        "name": "Doginal Diamonds #33",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Yellow"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Orange"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/7e61b8a3417d2090bc857028d1a402741a8d6b3582d608c1c9246dc9de2e28bbi0",
+        "name": "Doginal Diamonds #34",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Green"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Red"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Green"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/750bb1cd909fd4222e58a25cc10993b4e9b42aea59db6de86b0a715302dcbd6bi0",
+        "name": "Doginal Diamonds #35",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Green"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Indigo"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "GOD"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/b6c73372d261cfe8d4aa726cc82ec0a5303a45115367c8403d37d8fea05d9f31i0",
+        "name": "Doginal Diamonds #36",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Yellow"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Yellow"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Indigo"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "White "
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/cda5857e5bea917f0b29b338d35181c526001a6db5ac92d9685ee77905ee2f02i0",
+        "name": "Doginal Diamonds #37",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Light Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "D"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Blue"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Blue"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/ac7a349247ef6c75aaa157c3f3dd3be4193564acd4a3734e4b15fb78b004c4c1i0",
+        "name": "Doginal Diamonds #38",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Light Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "CamoBRG"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/d8ce24f270b04d173306d8f0994ceb17e19ef893800da8756de2464a87904f8fi0",
+        "name": "Doginal Diamonds #39",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Green"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Red"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Indigo"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "White "
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/0acb2fc3c039116b5cb2c903464e02faaf34b789f9663f2b7576440583b9c05ai0",
+        "name": "Doginal Diamonds #40",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Yellow"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Diamonds"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "White "
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/8261ae4bcf79e16d27cb59386ea6dc8cced75f0e689b92fd482b7d62f6df97a1i0",
+        "name": "Doginal Diamonds #41",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Green"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Diamonds"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Blue"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Indigo"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "White "
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/8086173e2719bb736daf4499a7540485ca36bdedbc5c3af63312e53748a1eeb7i0",
+        "name": "Doginal Diamonds #42",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Orange"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "D"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Red"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Green"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "White "
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/295d6104a0cbf2ff9313a609e24636aa8ac6fe7dbc604c245c1c3f5dc7fa1eb1i0",
+        "name": "Doginal Diamonds #43",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Light Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "D"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Yellow"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/259e9d78766b6b8511fcbc019b7f300dade7ee19aecadc2619889d30188a9c04i0",
+        "name": "Doginal Diamonds #44",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Green"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Blue"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "White "
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/e675ce223c82c52c825d2ccca6324e52b3bc8cd06f26e2b7eb5786d000b3e3a9i0",
+        "name": "Doginal Diamonds #45",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Light Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Diamonds"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Blue"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "GOD"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "White "
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/e18c465ee4119ce3727bf999e902a23483a8da8695bf5b1b229bc86c2c602057i0",
+        "name": "Doginal Diamonds #46",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Light Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Green"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Green"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "White "
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/c050ba39f1b0fc7a4ba8646f898a5c4773265e40b4fc123866628f68c55e6cfai0",
+        "name": "Doginal Diamonds #47",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Light Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Indigo"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Indigo"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Orange"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/bd44acb39eff776ad28b9f642d9863e683826ec0996e40f961a2a51a3ba6991ei0",
+        "name": "Doginal Diamonds #48",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Orange"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Orange"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/a6f66b28698b937f5bf62b88761eeea6678b8e5f4c8e0f5f9844ee9a2a419c61i0",
+        "name": "Doginal Diamonds #49",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Light Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Camo"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Green"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/b827cda9e750071f0662ae6e95ef4af21a3d5e56e248e1dd4c09a0ac39282e08i0",
+        "name": "Doginal Diamonds #50",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Yellow"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Orange"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Orange"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Blue"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/f5c80c1ba8195bffc5d2c5410a0d496b357eefc630a5f169ab18923b0dd9fcdfi0",
+        "name": "Doginal Diamonds #51",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Diamonds"
+            },
+            {
+                "trait_type": "Body",
+                "value": "CamoBGR"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Yellow"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/61052bbf540867e9bbbf6ccca95e9906f7085df5b0255aa0fc5752081ac4419bi0",
+        "name": "Doginal Diamonds #52",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Orange"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Diamonds"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Yellow"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Indigo"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "White "
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/1d1f60702a3ac4ccd5485dde634ce93f431da25b519a2c61edc65a8b3badb8c0i0",
+        "name": "Doginal Diamonds #53",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Blue"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Yellow"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/2a3a0dd65a1b856aef2a04837de502143f4300a0673a5e16164d6816d7695d1ai0",
+        "name": "Doginal Diamonds #54",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Orange"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "D with Diamonds"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Indigo"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Green"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "White "
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/bee4fff36855023e1d135225301edbdc78e186586d261fba3161210bcbb99d8ei0",
+        "name": "Doginal Diamonds #55",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Light Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "D"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Red"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "GOD"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/84d1c7531486d8b9d5efac84c6f61d81a12075436ebb505f2850c55788205abfi0",
+        "name": "Doginal Diamonds #56",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Light Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Yellow"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Red"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "White "
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/f550f2ece8a955387dccb04b4bb106d4ffdbb24fc536fb47c738c93c5434492ei0",
+        "name": "Doginal Diamonds #57",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Green"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Blue"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/16bb133e538eb86c0f50b49b87fcf52c2e7d6f4079d1c5a6843d7712f02ed21ai0",
+        "name": "Doginal Diamonds #58",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Blue"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Yellow"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "White "
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/0a43188bc848167d542d443c5948a9addf540cad21cfe87a7edd9356f013b7eci0",
+        "name": "Doginal Diamonds #59",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Diamonds"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Camo"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Yellow"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "White "
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/07692a2091b7911a69402a60455ce48cc1ce1b3c6caab17565ad61ca6548ccefi0",
+        "name": "Doginal Diamonds #60",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Yellow"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Orange"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "White "
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/b8f03237f2ae3c150e70107d9d90a299731b72837829976ef6bbba6d620ee365i0",
+        "name": "Doginal Diamonds #61",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Yellow"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "CamoBGR"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Orange"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/5436236b9e906f928d08704632d45afc517d52793cf1ca983478e7f54ffed665i0",
+        "name": "Doginal Diamonds #62",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Light Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Diamonds"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Green"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Indigo"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/faccce2b5bf245f60bfb44b097233d20dd77e2ced2f28cff7b29a5512706ab49i0",
+        "name": "Doginal Diamonds #63",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Green"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "CamoBYG"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/5046ffb03c623c46f27b3f265fabef3fab0be69272a1f22459478add0722778fi0",
+        "name": "Doginal Diamonds #64",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Orange"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Green"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "White "
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/ece68ccb188456e06da509dc6d3affeef9f1b83a5958a074b1eac78a502e871ai0",
+        "name": "Doginal Diamonds #65",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Light Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Orange"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/1e1b422f4ff263741b91afa8b66c21098bd5064dcae10a79250d4098fe5eddabi0",
+        "name": "Doginal Diamonds #66",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Light Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Red"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Red"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/bee0ea5010d69828da326ce5b9188ade529d7d06339abd511fce874625043aa4i0",
+        "name": "Doginal Diamonds #67",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Blue"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/f423402f2213a587d62cc87be2ec610b400c097a14cf887db692806bbf224e6ai0",
+        "name": "Doginal Diamonds #68",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Yellow"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Violet"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/f73d0cceaebfdecb99f0a19fd75ce977f14245855424ca2c41bd2639a5632517i0",
+        "name": "Doginal Diamonds #69",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Violet"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Red"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "White "
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/7bbbe599bbf3b9b216714c20e98ca48c187ffd5f7c3de664672f86b2eb97cd9di0",
+        "name": "Doginal Diamonds #70",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Light Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Red"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Violet"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/191dfbfa08679bcfe660b272d6c0248849c579cf54ab0ca858907248c11f1120i0",
+        "name": "Doginal Diamonds #71",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Light Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Yellow"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Red"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/560241b8860d8358432a3725258d8feaeeefa20ed030488e971e6a2507c0e432i0",
+        "name": "Doginal Diamonds #72",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "CamoBRG"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Indigo"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/2b4d1aa586da09202623d266441c83229e23238f55bf9b7a2f60b70f195c8e97i0",
+        "name": "Doginal Diamonds #73",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Light Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "D"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Orange"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Green"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/a9666f6fdcce44c97037859e012c78c973a3b53af9fc86764aa5d84224342c36i0",
+        "name": "Doginal Diamonds #74",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Green"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Violet"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Yellow"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Solid"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/5f3afbaba75e49dcc4d79827e05575e7d81b137ee004376a00842c116c498f3ci0",
+        "name": "Doginal Diamonds #75",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Diamonds"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Indigo"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Indigo"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/571b195cef3693b65eb21d8607cf890551ed7e552554d76f302f32ec3889a3dbi0",
+        "name": "Doginal Diamonds #76",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Green"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Blue"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Violet"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "White "
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/35c09294e4be743eb28391d10ca405646a2846116ba2db8538ba194bd1e2ef3bi0",
+        "name": "Doginal Diamonds #77",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Orange"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Violet"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Green"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/74cdd38c7a8d1299ccd946ae825973b9144ad1abaf2332adcc8fd0cf7a11b796i0",
+        "name": "Doginal Diamonds #78",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Blue"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Red"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/a62917a7ff0246887eb685dcd047b0f1c96d0c8b2075681ffd9ab4536736d188i0",
+        "name": "Doginal Diamonds #79",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Green"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Orange"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "GOD"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "White "
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/7006d0cc1b06b6e4316d10f121018874b727db8448544cc7f787d74abc3084bei0",
+        "name": "Doginal Diamonds #80",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Violet"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/d69582cd08ccf187119c84544ddc6a88f178321c38565259fd4331ba76e26803i0",
+        "name": "Doginal Diamonds #81",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Light Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Diamonds"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Indigo"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Red"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/7ea8f963beb6f09c1fe71f1c83a7625d9119d954e59fe6685349bbc316428e16i0",
+        "name": "Doginal Diamonds #82",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "D"
+            },
+            {
+                "trait_type": "Body",
+                "value": "CamoBGR"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Blue"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/2f2d6af6bc2bd9018f86f42b15e67b6d9fc7057e86af16ef1968ade708e473e0i0",
+        "name": "Doginal Diamonds #83",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Light Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Orange"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Blue"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "White "
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/3305bef7ca366451d37c4dfe9d1179685f3e32fba84a6adcb2852ec2ad697808i0",
+        "name": "Doginal Diamonds #84",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Light Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "D"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Yellow"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Orange"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "White "
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/b7fa006c9768fe9a5e6ec8013584b32caebc34eabbbf8fcb7ea7d54fd6221ab7i0",
+        "name": "Doginal Diamonds #85",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Light Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "D"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Indigo"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Violet"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/7c7acc002162b94bb123df322bfc24815e973940cb0b2a757ff8bd6e9cfcc7cai0",
+        "name": "Doginal Diamonds #86",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "D"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Blue"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Red"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/fd4bf8b098793b8f4ad394648a26dc3a02d252f0f87d8d8e1ba0903151c0085di0",
+        "name": "Doginal Diamonds #87",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Yellow"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "D with Diamonds"
+            },
+            {
+                "trait_type": "Body",
+                "value": "CamoBGY"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/388073743435d5323f21aeac29060b6dd7055dae52f6dfaa3a112ff0351695f9i0",
+        "name": "Doginal Diamonds #88",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Green"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Orange"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Yellow"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/23eec23e18f208adb97ebe1da1a07c458d4211cdc965868cd472e287a9e1835fi0",
+        "name": "Doginal Diamonds #89",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Yellow"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "D"
+            },
+            {
+                "trait_type": "Body",
+                "value": "CamoBYG"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Blue"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Gray"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/5d8fd49f7ccd0bf58501af9c4f050e646f6d8461f6e41f58e808d64ca3c1a448i0",
+        "name": "Doginal Diamonds #90",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Orange"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "D"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Yellow"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Blue"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "White "
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/577a8d531940cba2478f060944898f1f5f069b474bc502fc0ab0ab21a64f520ai0",
+        "name": "Doginal Diamonds #91",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Orange"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "OG"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Red"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/37d3e5d9993210dc139917a6e9bb754aaeea5efca9e87211f53528f7cdda41ebi0",
+        "name": "Doginal Diamonds #92",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Green"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Blue"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/9a36a5969e6695708307059fc6b749740fd87efdff8b1170bb1abb245222d196i0",
+        "name": "Doginal Diamonds #93",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Yellow"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Blue"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Red"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/3c5fac7c445d835c45441ce18dd59efac39a519b6ee0eb798f577d81d4c74a00i0",
+        "name": "Doginal Diamonds #94",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Green"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Yellow"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/d5c5c13e17cba58ff64e6803af7b0844769810aa1805d7b2504ef4ad62167e31i0",
+        "name": "Doginal Diamonds #95",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Orange"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "D"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Solid"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Indigo"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/dcbfeb98b7155c2c278057ad014fd261fdbad5b1df21335ad9dce48f89c6a8b4i0",
+        "name": "Doginal Diamonds #96",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Yellow"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/0d1f192ada8e006a733d39d163c8ae9a31f7acc3a6819fe3581b9ac10963548di0",
+        "name": "Doginal Diamonds #97",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Orange"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Violet"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Orange"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "White "
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/e11c4853414815120a62078bd60caf9c6987c6672d344ccb591c893518cbdb85i0",
+        "name": "Doginal Diamonds #98",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Yellow"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Red"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/8aa5b2183fd4432bb3c5b719a7433674caabcb75e7fbeab801bd3483a38ee9b1i0",
+        "name": "Doginal Diamonds #99",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Green"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Yellow"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Green"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/e49cefa7f29ba7ffe34120a66c33a9ee1175028f20474b86601d3cbba957ad4ei0",
+        "name": "Doginal Diamonds #100",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Diamonds"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Green"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Violet"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/923bd4e48c0fe9b2a27302fdff646d08be5f8fa0e56d2e0870af6eb8d24db2e5i0",
+        "name": "Doginal Diamonds #101",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Yellow"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Green"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/a90ece9d75af8b4c44b89293cc1bdedf057282d57f42d1e55840ecebf12cd316i0",
+        "name": "Doginal Diamonds #102",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Light Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "D with Diamonds"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Solid"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Yellow"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/6805f1fef643d8aadb587c9764b69dd72a93b389fb3414ac7ccab981ef8a66f3i0",
+        "name": "Doginal Diamonds #103",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Light Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Yellow"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Yellow"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "White "
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/8423b21da23d9da453dc33cb1caf20b5bba51c011733bb68e9fb46e6cc0aeed1i0",
+        "name": "Doginal Diamonds #104",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Green"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "D"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Gray"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Yellow"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/326b7fc00cfd2b3f10cde2cc923d6cb9acdb6e90c3ed03fe9e90dfa28141c8e8i0",
+        "name": "Doginal Diamonds #105",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Light Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Diamonds"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Orange"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Yellow"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "White "
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/143e8e75fff6a5b53e130caef6ef7130f46d40b3a4f336532d3701e217f8f1dai0",
+        "name": "Doginal Diamonds #106",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Light Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Blue"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Blue"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/53bcd0070703f205ae6547dc5d364fd5f1501027f6b10d5656d3a6c456d2b29bi0",
+        "name": "Doginal Diamonds #107",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Orange"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Diamonds"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Yellow"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Solid"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "White "
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/a0a20b7025eaf31abe4fd7d6f4ccf72d75c74fff8292768770958165a813e822i0",
+        "name": "Doginal Diamonds #108",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Light Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "OG"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Green"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/1c04797b29bfca13c62f794bb3fde58dc9261e6c8f09c6137398f992b00153f4i0",
+        "name": "Doginal Diamonds #109",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Light Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Orange"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Blue"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/b3b41cd86dc7759e5c26f068e9174ecef8f8c9daa4b4afb0aa83579fc59e6f10i0",
+        "name": "Doginal Diamonds #110",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Light Gray"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "Basic"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Orange"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Orange"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    },
+    {
+        "image": "https://cdn.doggy.market/content/0b6d000604b0326ee7aafbb409f3d47d0f269ced77c082ee610d24b5b1ccb5eei0",
+        "name": "Doginal Diamonds #111",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Yellow"
+            },
+            {
+                "trait_type": "Pattern",
+                "value": "D with Diamonds"
+            },
+            {
+                "trait_type": "Body",
+                "value": "OG"
+            },
+            {
+                "trait_type": "Sauce",
+                "value": "Solid"
+            },
+            {
+                "trait_type": "Shine",
+                "value": "Shine"
+            },
+            {
+                "trait_type": "Outline",
+                "value": "Black"
+            }
+        ]
+    }
+]
+// Ensure this matches your NFT data source
+
+const ITEMS_PER_PAGE = 21;
+let currentPage = 1;
+let filteredNFTs = [...nftCollection];
+
+document.addEventListener("DOMContentLoaded", () => {
+  renderCards(currentPage); // Initial render
+});
+
+function renderCards(page = 1) {
+  const nftGrid = document.getElementById("nft-grid");
+  const pagination = document.getElementById("pagination");
+  const noResults = document.getElementById("no-results");
+
+  nftGrid.innerHTML = "";
+  noResults.classList.add("hidden");
+
+  const start = (page - 1) * ITEMS_PER_PAGE;
+  const end = page * ITEMS_PER_PAGE;
+  const paginatedNFTs = filteredNFTs.slice(start, end);
+
+  if (paginatedNFTs.length === 0) {
+    noResults.classList.remove("hidden");
+    pagination.classList.add("hidden");
+    return;
+  }
+
+  pagination.classList.remove("hidden");
+  paginatedNFTs.forEach((nft) => {
+  const card = document.createElement("a");
+  card.className = "diamond-glow bg-black p-6 rounded-lg";
+  card.href = `https://doggy.market/inscription/${nft.image.split('/').pop()}`; // Replace with your URL logic
+  card.target = "_blank"; // Opens in a new tab
+  card.rel = "noopener noreferrer"; // Security for external links
+  card.innerHTML = `
+    <img src="${nft.image}" alt="${nft.name}" class="w-full rounded">
+    <h3 class="mt-4 text-2xl font-bold">${nft.name}</h3>
+    <p>${nft.attributes.map(attr => `${attr.trait_type}: ${attr.value}`).join("<br>")}</p>
+  `;
+  nftGrid.appendChild(card);
+});
+
+
+  updatePagination(page);
+}
+
+function updatePagination(page) {
+  const totalPages = Math.ceil(filteredNFTs.length / ITEMS_PER_PAGE);
+  document.getElementById("page-info").textContent = `Page ${page} of ${totalPages}`;
+  document.getElementById("prev-page").disabled = page <= 1;
+  document.getElementById("next-page").disabled = page >= totalPages;
+}
+
+// Pagination Buttons
+document.getElementById("prev-page").addEventListener("click", () => {
+  if (currentPage > 1) {
+    currentPage--;
+    renderCards(currentPage);
+  }
+});
+
+document.getElementById("next-page").addEventListener("click", () => {
+  const totalPages = Math.ceil(filteredNFTs.length / ITEMS_PER_PAGE);
+  if (currentPage < totalPages) {
+    currentPage++;
+    renderCards(currentPage);
+  }
+});
+
+    function applyFilters(filters) {
+  filteredNFTs = nftCollection.filter((nft) => {
+    return Object.keys(filters).every((key) => {
+      if (filters[key] === "all") return true; // Skip filtering for "all"
+      const trait = nft.attributes.find(attr => attr.trait_type === key);
+      return trait && trait.value === filters[key];
+    });
+  });
+  currentPage = 1; // Reset to first page
+  renderCards(currentPage); // Re-render cards based on updated filters
+}
+
+
+// Filters Object to Track Selections
+const filters = {
+  Background: "all",
+  Shine: "all",
+  Pattern: "all",
+  Body: "all",
+  Outline: "all",
+  Sauce: "all",
+};
+
+// Event Listeners for Filters
+document.getElementById("Background-filter").addEventListener("change", (event) => {
+  filters.Background = event.target.value;
+  applyFilters(filters);
+});
+
+document.getElementById("Shine-filter").addEventListener("change", (event) => {
+  filters.Shine = event.target.value;
+  applyFilters(filters);
+});
+
+document.getElementById("Pattern-filter").addEventListener("change", (event) => {
+  filters.Pattern = event.target.value;
+  applyFilters(filters);
+});
+
+document.getElementById("Body-filter").addEventListener("change", (event) => {
+  filters.Body = event.target.value;
+  applyFilters(filters);
+});
+
+document.getElementById("Outline-filter").addEventListener("change", (event) => {
+  filters.Outline = event.target.value;
+  applyFilters(filters);
+});
+
+document.getElementById("Sauce-filter").addEventListener("change", (event) => {
+  filters.Sauce = event.target.value;
+  applyFilters(filters);
+});
+
+// Reset Filters Button
+document.getElementById("reset-filters").addEventListener("click", () => {
+  Object.keys(filters).forEach((key) => (filters[key] = "all")); // Reset all filters
+  document.querySelectorAll("select").forEach((select) => (select.value = "all")); // Reset dropdowns
+  filteredNFTs = [...nftCollection]; // Reset to the full collection
+  currentPage = 1;
+  renderCards(currentPage);
+});
+
+
+    </script>
+
+    <!-- Roadmap Section -->
+    <section class="bg-black py-16">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-8">Our Roadmap</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-yellow-400 p-6 rounded-lg">
+                    <h3 class="text-2xl font-bold">Phase 1</h3>
+                    <p>Launch the collection and onboard the first 100 collectors.</p>
+                </div>
+                <div class="bg-yellow-400 p-6 rounded-lg">
+                    <h3 class="text-2xl font-bold">Phase 2</h3>
+                    <p>Introduce staking features and expand community.</p>
+                </div>
+                <div class="bg-yellow-400 p-6 rounded-lg">
+                    <h3 class="text-2xl font-bold">Phase 3</h3>
+                    <p>Exclusive events for Doginal Diamond holders!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-8">
+        <div class="container mx-auto text-center">
+            <p>Follow us on</p>
+            <div class="flex justify-center mt-4 space-x-4">
+                <a href="https://x.com/doginaldiamonds" target="_blank" rel="noopener noreferrer" class="hover:text-yellow-500">𝕏</a>
+                <a href="#" class="hover:text-yellow-500">Discord</a>
+                <a href="#" class="hover:text-yellow-500">GitHub</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
