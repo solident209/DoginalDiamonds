@@ -9,6 +9,22 @@
         body {
             background: linear-gradient(135deg, #cb9800, #000);
         }
+        .top-right-btn {
+            position: fixed;
+            top: 20px; /* Distance from the top */
+            right: 20px; /* Distance from the right */
+            z-index: 50; /* Ensure it stays on top */
+            background-color: #cb9800; /* Yellow background */
+            color: #000; /* Black text */
+            padding: 10px 20px; /* Button padding */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth hiding effect */
+        }
+        .hidden {
+            opacity: 0; /* Make it invisible */
+            pointer-events: none; /* Prevent interaction */
+        }
         .hero {
             background-image: url('https://cdn.doggy.market/content/c70893904cee0483cd33e42c0070cfeaeb59d134c2adc31236dfe293508e2650i0');
             background-size: cover;
@@ -31,11 +47,26 @@
     z-index: 10;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
+
+  .custom-sidebar {
+    height: 670px; /* Set the sidebar height to 50% of the viewport */
+    max-height: 800px; /* Set a maximum height for larger screens */
+    overflow-y: auto; /* Add vertical scrolling if content overflows */
+    display: flex; /* Align content inside */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: flex-start; /* Align items to the top */
+}
 </style>
 
     </style>
 </head>
 <body class="text-white font-sans">
+     <!-- Top-Right Button -->
+     <a href="https://doggy.market/nfts/diamonds" target="_blank" rel="noopener noreferrer"
+       id="top-right-btn" class="top-right-btn">
+       Doggy.Market
+    </a>
+
     <!-- Hero Section -->
     <section class="hero h-screen flex flex-col items-center justify-center text-center p-6">
         <h1 class="text-5xl font-extrabold" style="text-shadow: 2px 2px 8px rgba(0, 0, 0, 1);">
@@ -45,12 +76,13 @@
             A Unique Sparkle on the Dogecoin Blockchain!
         </p>        
         <button onclick="document.getElementById('collection').scrollIntoView({ behavior: 'smooth' });" class="mt-6 px-6 py-3 bg-yellow-500 rounded-full hover:bg-yellow-600">Explore the Collection</button>
+        <button onclick="document.getElementById('tools').scrollIntoView({ behavior: 'smooth' });" class="mt-6 px-6 py-3 bg-yellow-500 rounded-full hover:bg-yellow-600">Tools</button>
     </section>
 
     <!-- About Section -->
     <section class="bg-black py-16">
         <div class="container mx-auto text-center">
-            <h2 class="text-4xl font-bold mb-4">About Doginal Diamonds</h2>
+            <h2 class="text-4xl font-bold mb-4">Diamonds on the Dogecoin Blockchain</h2>
             <p class="text-lg max-w-3xl mx-auto">Discover rare, unique Dogecoin Ordinals that combine the power of Dogecoin with the resistance of diamonds. Each piece is minted as an ordinal on the Dogecoin blockchain, ensuring rarity, authenticity, and longevity.</p>
             <p class="text-lg max-w-3x1 mx-auto">For the True Diamond Hands.</p>
         </div>
@@ -61,7 +93,7 @@
         <div class="flex">
             
             <!-- Sidebar -->
-            <aside class="w-1/4 p-4 bg-black text-black">
+            <aside class="w-1/4 p-4 bg-black text-white custom-sidebar">
                 <div class="mb-4">
                     <div class="mb-6">
                         <label for="search-bar" class="font-bold">Search NFTs:</label>
@@ -163,7 +195,7 @@
     </aside>
     <!-- Main Content -->
     <div class="w-3/4 p-4">
-        <div id="nft-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+        <div id="nft-grid" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"></div>
         <div id="pagination" class="flex justify-center items-center space-x-4 py-4">
             <button id="prev-page" class="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded" disabled>
               Previous
@@ -3515,7 +3547,7 @@
 ]
 // Ensure this matches your NFT data source
 
-const ITEMS_PER_PAGE = 21;
+const ITEMS_PER_PAGE = 20;
 let currentPage = 1;
 let filteredNFTs = [...nftCollection];
 
@@ -3544,16 +3576,33 @@ function renderCards(page = 1) {
   pagination.classList.remove("hidden");
   paginatedNFTs.forEach((nft) => {
   const card = document.createElement("a");
-  card.className = "diamond-glow bg-black p-6 rounded-lg";
+  card.className = "diamond-glow bg-black p-4 sm:p-6 rounded-lg";
   card.href = `https://doggy.market/inscription/${nft.image.split('/').pop()}`; // Replace with your URL logic
   card.target = "_blank"; // Opens in a new tab
   card.rel = "noopener noreferrer"; // Security for external links
   card.innerHTML = `
-    <img src="${nft.image}" alt="${nft.name}" class="w-full rounded">
-    <h3 class="mt-4 text-2xl font-bold">${nft.name}</h3>
+  <img src="${nft.image}" alt="${nft.name}" class="w-full h-auto object-cover rounded">
+  <h3 class="mt-4 text-xl sm:text-2xl font-bold">${nft.name}</h3>
     <p>${nft.attributes.map(attr => `${attr.trait_type}: ${attr.value}`).join("<br>")}</p>
   `;
   nftGrid.appendChild(card);
+});
+
+// Select the button
+const topRightBtn = document.getElementById('top-right-btn');
+
+// Add scroll event listener
+window.addEventListener('scroll', () => {
+    // Get the scroll position
+    const scrollY = window.scrollY;
+
+    // If scrolled more than 100px, hide the button
+    if (scrollY > 100) {
+        topRightBtn.classList.add('hidden');
+    } else {
+        // Otherwise, show the button
+        topRightBtn.classList.remove('hidden');
+    }
 });
 
 
@@ -3650,25 +3699,33 @@ document.getElementById("reset-filters").addEventListener("click", () => {
     </script>
 
     <!-- Roadmap Section -->
-    <section class="bg-black py-16">
-        <div class="container mx-auto text-center">
-            <h2 class="text-4xl font-bold mb-8">Our Roadmap</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-yellow-400 p-6 rounded-lg">
-                    <h3 class="text-2xl font-bold">Phase 1</h3>
-                    <p>Launch the collection and onboard the first 100 collectors.</p>
-                </div>
-                <div class="bg-yellow-400 p-6 rounded-lg">
-                    <h3 class="text-2xl font-bold">Phase 2</h3>
-                    <p>Introduce staking features and expand community.</p>
-                </div>
-                <div class="bg-yellow-400 p-6 rounded-lg">
-                    <h3 class="text-2xl font-bold">Phase 3</h3>
-                    <p>Exclusive events for Doginal Diamond holders!</p>
-                </div>
-            </div>
+<section id="tools" class="bg-black py-16">
+    <div class="container mx-auto text-center">
+        <h2 class="text-4xl font-bold mb-8">Explore Our Tools & Interactive Links</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Tool Card 1 -->
+            <a href="https://cdn.doggy.market/content/8ee576baad53d6848366447442375589ade88970b62273db6ea01c3dd3e1b7b5i0" target="_blank" rel="noopener noreferrer" class="bg-yellow-400 p-6 rounded-lg hover:bg-yellow-500">
+                <img src="https://cdn.doggy.market/content/103567db861f9a743e79b6e6eb34c8d6eca0b73076ca6cce5d354cd83236f52ai0" alt="Tool 1" class="w-full h-40 object-contain rounded-md mb-4">
+                <h3 class="text-2xl font-bold">Coin Flip</h3>
+                <p class="mt-4">Fun and custom coin flip game, first side to hit 10 first wins!</p>
+            </a>
+            <!-- Tool Card 2 -->
+            <a href="https://cdn.doggy.market/content/f3b250170bd3f0825202e060b9f9637e58d8ba79691acf8200f3df2217beddf6i0" target="_blank" rel="noopener noreferrer" class="bg-yellow-400 p-6 rounded-lg hover:bg-yellow-500">
+                <img src="https://cdn.doggy.market/content/4472e3b50cdfdf628ee166584dfe0b437c9b2f0e09f7c458952a86558c0480bdi0" alt="Tool 1" class="w-full h-40 object-contain rounded-md mb-4">
+                <h3 class="text-2xl font-bold">Scrabble Score Tracker</h3>
+                <p class="mt-4">A tool for keeping score during your Scrabble Matches.</p>
+            </a>
+            <!-- Tool Card 3 -->
+            <a href="c89addaa11d6ad5063b1f02b76b352284b22df19fbb56fcf843e9fb5c7b968e3i0" target="_blank" rel="noopener noreferrer" class="bg-yellow-400 p-6 rounded-lg hover:bg-yellow-500">
+                <img src="https://cdn.doggy.market/content/f144fb51641c5067f2c0dd85869de50a57b4020dfbfa4e53c39a9403eca01855i0" alt="Tool 1" class="w-full h-40 object-contain rounded-md mb-4">
+                <h3 class="text-2xl font-bold">Random Winner Picker</h3>
+                <p class="mt-4">Use this for Giveaways to pick random winners.</p>
+            </a>
+            <!-- Add more cards as needed -->
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Footer -->
     <footer class="bg-black py-8">
