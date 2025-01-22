@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive iPhone Frame</title>
+  <style>
+    /* General Reset */
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #cb9800, #ffffff); /* Example gradient */
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .outer-background {
+      width: 100vw;
+      height: 100vh;
+      background: url('bg.PNG') center/cover no-repeat; /* Replace with your background image */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .iphone-container {
+      position: relative;
+    }
+
+    .iphone-frame {
+      width: 375px;
+      height: 812px;
+      background: #000;
+      border-radius: 40px;
+      position: relative;
+      box-shadow: 0 40px 400px rgba(0, 0, 0, 0.8);
+      overflow: hidden;
+      border: 10px solid black;
+    }
+
+    .notch {
+      width: 160px;
+      height: 35px;
+      background: #000;
+      border-radius: 15px;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .screen {
+      width: 100%;
+      height: 100%;
+      background: url('bg.JPG') center/cover no-repeat; /* Update the path if needed */
+      image-rendering: pixelated; /* Prevent blurring */
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Ensure `.home-icons` aligns correctly */
+    }
+
+    .status-bar {
+      width: 100%;
+      height: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #cb9800;
+      padding: 0px 10px;
+      
+    }
+
+    .volume-buttons {
+      position: absolute;
+      top: 150px; /* Adjusted vertical position */
+      left: -6px; /* Place outside the left edge of the frame */
+      display: flex;
+      flex-direction: column;
+      gap: 12px; /* Space between buttons */
+      visibility: visible;
+    }
+
+    .volume-button {
+      width: 8px;
+      height: 40px;
+      background: #000;
+      border-radius: 3px;
+    }
+
+    .power-button {
+      position: absolute;
+      top: 175px; /* Adjusted vertical position */
+      right: -6px; /* Place outside the right edge of the frame */
+      width: 10px;
+      height: 70px;
+      background: #000;
+      border-radius: 3px;
+      cursor: grab; /* Changes cursor to a pointer */
+    }
+
+    .carrier {
+      margin-left: 15px; /* Move the carrier closer to the center */
+      font-weight: bold;
+      flex-grow: 1; /* Allows flexible spacing */
+      text-align: left;
+    }
+
+    .signal-bars {
+    display: flex;
+    gap: 3px; /* Slightly increase space between bars */
+    margin-left: auto; /* Align signal bars automatically to the right */
+    margin-right: -165px; /* Adds spacing between signal bars and battery percentage */
+    transform: rotate(180deg); /* Rotates the bars 180 degrees */
+    z-index: 1; /* Ensure it's above the background */
+}
+
+.bar {
+    width: 4px; /* Slightly wider bars for better visibility */
+    background: #cb9800; /* Color of the signal bars */
+    border-radius: 2px; /* Rounded edges for aesthetic */
+    margin-top: 2px;
+    animation: blink 1s infinite alternate; /* Toggle between two states */
+}
+
+@keyframes blink {
+    0% { height: 8px; } /* Weakest height */
+    100% { height: 20px; } /* Strongest height */
+}
+
+/* Add delays for staggered blinking */
+.bar:nth-child(1) { animation-delay: 0s; }
+.bar:nth-child(2) { animation-delay: 0.1s; }
+.bar:nth-child(3) { animation-delay: 0.2s; }
+.bar:nth-child(4) { animation-delay: 0.3s; }
+.bar:nth-child(5) { animation-delay: 0.4s; }
+
+/* Static final heights (applied via JavaScript after animation ends) */
+.bar.final:nth-child(1) {
+    height: 20px;
+  }
+  .bar.final:nth-child(2) {
+    height: 16px;
+  }
+  .bar.final:nth-child(3) {
+    height: 12px;
+  }
+  .bar.final:nth-child(4) {
+    height: 8px;
+  }
+  .bar.final:nth-child(5) {
+    height: 4px;
+  }
+
+.battery {
+    margin-right: 10px; /* Move the battery percentage closer to the center */
+    font-weight: bold;
+    flex-grow: 1; /* Allows flexible spacing */
+    text-align: right;
+}
+
+.battery {
+    margin-right: 10px; /* Move the battery percentage closer to the center */
+    font-weight: bold;
+    flex-grow: 1; /* Allows flexible spacing */
+    text-align: right;
+}
+
+  .lockscreen.active {
+    display: flex;
+    text-align: center;
+    color: #cb9800;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  }
+  
+  .lockscreen, .homescreen {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
+  .clock {
+    font-size: 72px;
+    font-weight: bold;
+    margin-top: 40px;
+
+  }
+  
+  .date {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .swipe-text {
+    font-size: 20px;
+    opacity: 0.9;
+    margin-top: 550px;
+    font-weight: bold;
+    color: #cb9800; /* Ensure it’s styled */
+    text-align: center;
+    cursor: grab; /* Changes cursor to a pointer */
+  }
+
+  swipe-text:hover {
+      transform: scale(1.1);
+    }
+
+    .homescreen.active {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* Create 4 equal-width columns */
+      grid-template-rows: repeat(6, 1fr); /* Create 6 equal-height rows */
+      gap: 5px;
+      padding: 20px;
+      width: 100%; /* Ensure it spans the full width */
+      height: 100%;
+      justify-items: center; /* Center icons horizontally within each cell */
+      align-items: center; /* Center icons vertically within each cell */
+    }
+
+    .icon {
+      display: flex;
+      flex-direction: column; /* Stack image and text vertically */
+      justify-content: center;
+      align-items: center;
+    }
+
+    .icon-image {
+      width: 20vw;
+      height: 20vw;
+      max-width: 88px;
+      max-height: 88px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-radius: 15px;
+      cursor: pointer;
+    }
+
+    .icon-text {
+      margin-top: 1px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #cb9800;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="outer-background">
+    <div class="iphone-container">
+      <div class="iphone-frame">
+        <div class="notch"></div>
+        <div class="screen">
+          <div class="status-bar">
+            <span class="carrier">DOGINALS</span>
+            <div class="signal-bars">
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+            </div>
+            <span class="battery">5G 69%</span>
+          </div>
+          <div class="lockscreen active">
+            <div class="clock">4:20</div>
+            <div class="date">Monday, January 20</div>
+            <div class="swipe-text">Dogecoin to the MOON!</div>
+          </div>
+          <div class="homescreen">
+            <!-- Icons -->
+            <div class="icon">
+                <div class="icon-image"></div>
+                <div class="icon-text">Website</div>
+              </div>
+              <div class="icon">
+                <div class="icon-image"></div>
+                <div class="icon-text">X</div>
+              </div>
+              <div class="icon">
+                <div class="icon-image"></div>
+                <div class="icon-text">Doggy.Market</div>
+              </div>
+              <div class="icon">
+                <div class="icon-image"></div>
+                <div class="icon-text">OW</div>
+              </div>
+              <div class="icon">
+                <div class="icon-image"></div>
+                <div class="icon-text">Doge Labs</div>
+              </div>
+              <div class="icon">
+                <div class="icon-image"></div>
+                <div class="icon-text">App 6</div>
+              </div>
+              <div class="icon">
+                <div class="icon-image"></div>
+                <div class="icon-text">App 7</div>
+              </div>
+              <div class="icon">
+                <div class="icon-image"></div>
+                <div class="icon-text">App 8</div>
+              </div>
+              <div class="icon">
+                <div class="icon-image"></div>
+                <div class="icon-text">App 9</div>
+              </div>
+              <div class="icon">
+                <div class="icon-image"></div>
+                <div class="icon-text">App 10</div>
+              </div>
+              <div class="icon">
+                <div class="icon-image"></div>
+                <div class="icon-text">App 11</div>
+              </div><div class="icon">
+                <div class="icon-image"></div>
+                <div class="icon-text">App 12</div>
+              </div>
+          </div>
+        </div>
+      </div>
+      <!-- Volume and Power Buttons -->
+      <div class="volume-buttons">
+        <div class="volume-button"></div>
+        <div class="volume-button"></div>
+      </div>
+      <div class="power-button"></div>
+    </div>
+  </div>
+  <script>
+    // Add event listener to the .swipe-text
+    document.querySelector('.power-button').addEventListener('click', () => {
+      // Navigate to the home screen HTML
+      window.location.href = 'cc.html';
+    });
+    document.querySelector('.swipe-text').addEventListener('click', () => {
+      document.querySelector('.lockscreen').classList.remove('active'); // Hide lockscreen
+      document.querySelector('.homescreen').classList.add('active'); // Show homescreen
+    });
+
+    // Scaling function
+    function scaleIphoneFrame() {
+      const container = document.querySelector('.iphone-container');
+      const frame = document.querySelector('.iphone-frame');
+      const volumeButtons = document.querySelector('.volume-buttons');
+      const powerButton = document.querySelector('.power-button');
+      const frameWidth = 375;
+      const frameHeight = 812;
+
+      const viewportWidth = window.innerWidth;
+      const viewportHeight = window.innerHeight;
+
+      const maxScaleFactor = Math.min(viewportWidth / frameWidth, viewportHeight / frameHeight) * 0.95;
+      container.style.transform = `scale(${maxScaleFactor})`;
+    }
+
+    window.addEventListener('load', scaleIphoneFrame);
+    window.addEventListener('resize', scaleIphoneFrame);
+    // Wait for 7 seconds before applying the final state
+    setTimeout(() => {
+      // Select all bars
+      const bars = document.querySelectorAll('.bar');
+
+      // Remove animation and apply final heights
+      bars.forEach((bar) => {
+        bar.style.animation = 'none'; // Stop the blinking animation
+        bar.classList.add('final'); // Add the final heights
+      });
+    }, 5000); // 5 seconds
+    const iconURLs = [
+  'https://doginaldiamonds.com', // URL for icon1.png
+  'https://x.com/doginaldiamonds', // URL for icon2.png
+  'https://doggy.market/nfts/diamonds', // URL for icon3.png
+  '', // Placeholder for icon4.png
+  '', // Placeholder for icon5.png
+  '', // Placeholder for icon6.png
+];
+
+    document.addEventListener('DOMContentLoaded', () => {
+  // Array of image paths
+  const iconImages = [
+    'icons/1.PNG',
+    'icons/2.PNG',
+    'icons/3.PNG',
+    'icons/4.PNG',
+    'icons/5.PNG',
+    'icons/6.PNG',
+  ];
+
+    // Randomly shuffle the images
+  iconImages.sort(() => Math.random() - 0.5);
+
+// Select all icon-image elements
+const iconElements = document.querySelectorAll('.icon-image');
+
+// Assign images to icons and add click functionality
+iconElements.forEach((icon, index) => {
+  if (iconImages[index]) {
+    // Assign image from the array
+    icon.style.backgroundImage = `url('${iconImages[index]}')`;
+
+    // Add click event to open corresponding URL
+    icon.addEventListener('click', () => {
+      if (iconURLs[index]) {
+        window.open(iconURLs[index], '_blank'); // Open URL in a new tab
+      } else {
+        alert('Coming SOOON.');
+      }
+    });
+  } else {
+    // Assign a random image for extra icons
+    const randomImage = iconImages[Math.floor(Math.random() * iconImages.length)];
+    icon.style.backgroundImage = `url('${randomImage}')`;
+
+    // Add fallback click behavior
+    icon.addEventListener('click', () => {
+      alert('Coming SOOON.');
+    });
+   }
+  });
+});
+  </script>
+</body>
+</html>
